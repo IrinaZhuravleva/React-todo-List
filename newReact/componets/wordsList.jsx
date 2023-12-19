@@ -6,6 +6,9 @@ export const WordsList = () => {
     const arr = ['pear', 'bear', 'beer', 'pier', 'steal', 'steel', 'step']
     const [word, changeWord] = useState(0)
 
+    const showBack = word !== 0;
+    const showNext = word !== arr.length-1;
+
     function changeIndexForward() {
         if (word >= arr.length) {
             return
@@ -29,8 +32,8 @@ export const WordsList = () => {
     return (
         <>
             <Title title={['title1', 'title2']} word={arr[word]} />
-            <Button func={changeIndexBackward}>Back</Button>
-            <Button func={changeIndexForward}>Next</Button>
+            {showBack && <Button func={changeIndexBackward}>Back</Button>}
+            {showNext && <Button func={changeIndexForward}>Next</Button>}
         </>
     )
 }
