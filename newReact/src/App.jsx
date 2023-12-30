@@ -1,24 +1,36 @@
-/* eslint-disable no-debugger */
-import { WordsList } from '../componets/wordsList'
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import AllLists from './componets/AllLists/AllLists.jsx';
+import ToDoList from './componets/AllLists/AllLists.jsx';
+import ToDoLists from './ToDoLists.jsx'
+// import CreateNewList from '../componets/ToDoListTitle/ToDoListTitle.jsx'
 
 import './App.css'
 
 function App() {
-  const base = [{
-    id: 1,
-    question: 'лес',
-    answer: 'forest'
-  }, {
-      id: 2,
-      question: 'гора',
-      answer: 'mountain'
-    }, {
-      id: 3,
-      question: 'мельница',
-      answer: 'mill'
-    }];
+  
+
   return (
-    <WordsList />
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/all-lists">All Lists</Link>
+            </li>
+            <li>
+              <Link to="/to-do-lists">ToDoLists</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <hr />
+        <Routes>
+          <Route path="/all-lists" element={<AllLists />} />
+          <Route path="/to-do-lists" element={<ToDoLists />} />
+          {/* <Route path="/to-do-lists/:id" element={<ToDoList />} /> */}
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

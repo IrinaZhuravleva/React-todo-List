@@ -1,10 +1,10 @@
 import { useState } from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
-import DoneActions from '../componets/DoneActions/DoneActions';
-import ActionsList from '../componets/ActionsList/ActionsList';
-import InputNewAction from '../componets/InputNewAction/InputNewAction';
-import BtnAddAction from '../componets/BtnAddAction/BtnAddAction';
+import DoneActions from './componets/DoneActions/DoneActions';
+import ActionsList from './componets/ActionsList/ActionsList';
+import InputNewAction from './componets/InputNewAction/InputNewAction';
+import BtnAddAction from './componets/BtnAddAction/BtnAddAction';
 
 export default function ToDoList () {
 

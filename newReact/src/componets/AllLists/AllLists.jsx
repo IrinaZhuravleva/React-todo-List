@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import ToDoList from '../ToDoList/ToDoList';
+
 const AllLists = () => {
     const [data, setData] = useState(null);
 
@@ -26,10 +28,8 @@ const AllLists = () => {
     return (
         <div>
             {data ? (
-                <ul style={{ listStyleType: 'none', padding: 0 }}>
-                    {data.map(item => (
-                        <li key={item.id}>{item.id}. {item.title} </li>
-                    ))}
+                <ul>
+                    {data.map(item => (<ToDoList key={item.id} id={item.id} title={item.title} />))}
                 </ul>
             ) : (
                 <p>Loading...</p>
