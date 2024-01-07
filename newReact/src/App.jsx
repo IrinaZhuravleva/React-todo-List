@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
-import AllLists from './componets/AllLists/AllLists.jsx';
-import ToDoList from './componets/AllLists/AllLists.jsx';
-import ToDoLists from './ToDoLists.jsx'
-// import CreateNewList from '../componets/ToDoListTitle/ToDoListTitle.jsx'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import AllLists from './components/AllLists/AllLists.jsx';
+import ToDoListPage from './pages/ToDoListPage/ToDoListPage.jsx';
+import CreateNewList from './components/ToDoListTitle/ToDoListTitle.jsx';
+// import ToDoLists from './ToDoLists.jsx'
 
 import './App.css'
 
@@ -18,7 +18,7 @@ function App() {
               <Link to="/all-lists">All Lists</Link>
             </li>
             <li>
-              <Link to="/to-do-lists">ToDoLists</Link>
+              <Link to="/create-new-title">Create new title</Link>
             </li>
           </ul>
         </nav>
@@ -26,12 +26,12 @@ function App() {
         <hr />
         <Routes>
           <Route path="/all-lists" element={<AllLists />} />
-          <Route path="/to-do-lists" element={<ToDoLists />} />
-          {/* <Route path="/to-do-lists/:id" element={<ToDoList />} /> */}
+          <Route path="/create-new-title" element={<CreateNewList />} />
+          <Route path="/aba/:id" element={<ToDoListPage />} /> 
         </Routes>
       </div>
     </Router>
   )
 }
 
-export default App
+export default App;

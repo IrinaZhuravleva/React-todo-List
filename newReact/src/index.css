@@ -60,6 +60,9 @@ input {
 .done {
   color: green;
 }
+ul {
+  list-style-type: none;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
