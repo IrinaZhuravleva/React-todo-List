@@ -21,12 +21,13 @@ return (
                 return (
 
                     <li key={item.id}>
-                            <label style={{cursor:"pointer"}}>
+                            <label>
                             {item.body}
-                                <input type="checkbox" 
-                                data-item-text={item.body}
-                                data-item-id={item.id}
-                                onChange={changeActionStatus}
+                                <input type="checkbox"
+                                    style={{ cursor: "pointer" }}
+                                    data-item-text={item.body}
+                                    data-item-id={item.id}
+                                    onChange={changeActionStatus}
                                     >
                                 </input>
                             </label>

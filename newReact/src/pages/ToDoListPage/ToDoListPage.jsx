@@ -8,9 +8,8 @@ import DoneActions from '../../components/DoneActions/DoneActions';
 
 const ToDoListPage = () => {
     const { id } = useParams();
-
-    const [data, setData] = useState(null); 
-  
+    const [data, setData] = useState(null);
+    
     const fetchData = async () => {
         try {
             const response = await axios.get(`https://todoapiexample-production.up.railway.app/todo_lists/${id}`);
@@ -22,7 +21,6 @@ const ToDoListPage = () => {
 
     const handleListUpdate = async () => {
         fetchData();
-        console.error('blalab');
     };
 
     useEffect(() => {
@@ -46,7 +44,10 @@ const ToDoListPage = () => {
                             actions={data.todo_items.filter(item => item.completed === false)}
                             onActionUpdate={handleListUpdate}/>
                         <hr />
-                        <DoneActions className="done" doneActions={data.todo_items.filter(item => item.completed === true).map(item => item.body) } />
+                        <DoneActions 
+                            className="done" 
+                            doneActions={data.todo_items.filter(item => item.completed === true)}
+                            onActionUpdate={handleListUpdate} />
                     </>
                 )
                 : (<p>Loading...</p>)
