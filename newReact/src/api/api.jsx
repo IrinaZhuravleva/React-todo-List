@@ -23,3 +23,31 @@ export const getLists = async () => {
         console.log(err);
     }
 };
+
+export const deleteList = async (listId) => {
+    try {
+        const response = await axios.delete(`https://todoapiexample-production.up.railway.app/todo_lists/${listId}`);
+        console.log(response.data);
+    }
+    catch (err) {
+        console.log(err)
+    }
+}
+
+export const deleteItem = async (itemId) => {
+    try {
+        const response = await axios.delete(`https://todoapiexample-production.up.railway.app/todo_items/${itemId}`);
+        console.log(response.data);
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+export const toggleTodoItem = async (itemId) => {
+    try {
+        await axios.patch(`https://todoapiexample-production.up.railway.app/todo_items/${itemId}/toggle`);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};

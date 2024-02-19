@@ -1,19 +1,18 @@
-import axios from 'axios';
+import { toggleTodoItem, deleteItem } from '../../api/api.jsx'
 
 export default function ActionsList({ actions, onActionUpdate }){
 
-    const toggleTodoItem = async (itemId) => {
-        try {
-            await axios.patch(`https://todoapiexample-production.up.railway.app/todo_items/${itemId}/toggle`);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+    
 
     const changeActionStatus = async (e) => {
         await toggleTodoItem(e.target.dataset.itemId);
         await onActionUpdate();
     };
+
+    const deleteItemFromList = async (e) => {
+        await deleteItem(e.target.dataset.itemId);
+        await onActionUpdate();
+    }
 
 return (
         <ul>
@@ -30,6 +29,18 @@ return (
                                     onChange={changeActionStatus}
                                     >
                                 </input>
+                                <button
+                                    style={{
+                                        cursor: "pointer",
+                                        marginLeft: "15px",
+                                        backgroundColor: "black",
+                                        color: "white"
+                                    }}
+                                    data-item-text={item.body}
+                                    data-item-id={item.id}
+                                    onClick={deleteItemFromList}
+                                >DELETE
+                                </button>
                             </label>
                         </li> 
                     )
