@@ -1,11 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+#root {
+  background-color: #d7d9ed;
+  min-height: 100vh;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #d7d9ed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,20 +22,29 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #fff;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
+  /* Общие свойства */
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
+  background-color: #fff;
+
+  /* Свойства для flex-контейнера */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  width: 100%;
 }
 
 h1 {
@@ -37,13 +53,13 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  /* border-radius: 8px; */
+  border: 0px;
+  /* padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,8 +70,11 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-input {
+/* input {
   padding: 7px;
+} */
+input:focus {
+  border: 0;
 }
 .done {
   color: green;
@@ -64,15 +83,18 @@ ul {
   list-style-type: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.item {
+    width: 100%;
+
+    margin: 20px 0px;
+    padding: 10px;
+    height: 82px;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
