@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { deleteList } from '../../api/api.jsx'
 import axios from 'axios'
 
-import ToDoList from '../ToDoList/ToDoList'
-import './AllLists.css'
-import pencilIcon from './img/Pencil.png'
-// import circleIcon from './img/CheckCircle.png'
+import ToDoList from '../../components/ToDoList/ToDoList.jsx'
+import Preloader from '../../components/Preloader/Preloader.jsx'
+import './AllListsPage.css'
+import pencilIcon from './img/Pencil.svg'
 import trashIcon from './img/Trash.png'
 
 const AllLists = () => {
@@ -94,7 +94,7 @@ const AllLists = () => {
           ))}
         </ul>
       ) : (
-        <p>Loading...</p>
+        <Preloader />
       )}
     </div>
   )

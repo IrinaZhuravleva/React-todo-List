@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import './ToDoListTitle.css';
+import './CreateNewListPage.css'
 
 export default function CreateNewList() {
   const [post, setPost] = useState({ title: '', id: 0 })
@@ -27,29 +27,15 @@ export default function CreateNewList() {
   }
 
   const LastTitle = () => {
-    // const [isVisible, setIsVisible] = useState(true)
-
-    // useEffect(() => {
-    //   const timeoutId = setTimeout(() => {
-    //     setIsVisible(false)
-    //   }, 10000) // 10 seconds
-
-    //   // Очистка таймера при размонтировании компонента или изменении isVisible
-    //   return () => clearTimeout(timeoutId)
-    // }, [])
-
     return (
       <>
-        {/* {isVisible && ( */}
-          <ul>
-            <li>
-              You have created a new list which is titled <b>{post.title}</b>
-            </li>
-          </ul>
-        {/* )} */}
+        <ul>
+          <li>
+            You have created a new list which is titled <b>{post.title}</b>
+          </li>
+        </ul>
       </>
     )
-    // };
   }
 
   return (
@@ -61,7 +47,7 @@ export default function CreateNewList() {
           </li>
         </ul>
       </nav>
-      <div className="container" style={{ backgroundColor: '#fff' }}>
+      <div className="container" style={{ backgroundColor: '#fff', height: '250px' }}>
         <input
           type="text"
           style={{

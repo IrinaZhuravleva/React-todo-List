@@ -1,23 +1,11 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #root {
   background-color: #d7d9ed;
   min-height: 100vh;
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  background-color: #d7d9ed;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-width: 380px;
 }
 
 a {
@@ -30,9 +18,6 @@ a:hover {
 }
 
 body {
-  /* Общие свойства */
-  min-width: 320px;
-  min-height: 100vh;
   margin: 0;
   background-color: #fff;
 
@@ -41,6 +26,12 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 ul {
@@ -53,13 +44,7 @@ h1 {
 }
 
 button {
-  /* border-radius: 8px; */
   border: 0px;
-  /* padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -70,12 +55,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-/* input {
-  padding: 7px;
-} */
-input:focus {
-  border: 0;
-}
+
 .done {
   color: green;
 }
@@ -84,17 +64,17 @@ ul {
 }
 
 .item {
-    width: 100%;
+  width: 100%;
 
-    margin: 20px 0px;
-    padding: 10px;
-    height: 82px;
-    font-size: 13px;
-    text-transform: uppercase;
-    border-radius: 15px;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 20px 0px;
+  padding: 10px;
+  height: 82px;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }

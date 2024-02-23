@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AllLists from './components/AllLists/AllLists.jsx';
+import AllLists from './pages/AllListsPage/AllListsPage.jsx';
 import ToDoListPage from './pages/ToDoListPage/ToDoListPage.jsx';
-import CreateNewList from './components/ToDoListTitle/ToDoListTitle.jsx';
+import CreateNewList from './pages/CreateNewListPage/CreateNewListPage.jsx'
 
 
 import './App.css'

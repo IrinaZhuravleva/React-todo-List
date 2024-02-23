@@ -6,6 +6,7 @@ import axios from 'axios'
 import AddAction from '../../components/AddAction/AddAction.jsx'
 import ActionsList from '../../components/ActionsList/ActionsList'
 import DoneActions from '../../components/DoneActions/DoneActions'
+import Preloader from '../../components/Preloader/Preloader.jsx'
 
 const ToDoListPage = () => {
   const { id } = useParams()
@@ -41,32 +42,16 @@ const ToDoListPage = () => {
           <li>
             <Link to="/">All Lists</Link>
           </li>
-          {/* <li>
-            <Link to="/create-new-title" className="create-new">
-              <svg
-                width="22"
-                height="25"
-                viewBox="0 0 22 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11 5.54688V19.3281M4.875 12.4375H17.125H4.875Z"
-                  stroke="#9295D2"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </li> */}
         </ul>
       </nav>
 
       {data ? (
         <div className="container">
           <ul style={{ listStyleType: 'none' }}>
-            <li><b>List Name is: </b>{data.title}</li>
+            <li>
+              <b>List Name is: </b>
+              {data.title}
+            </li>
           </ul>
           <AddAction onListUpdate={handleListUpdate} />
           <ActionsList
@@ -82,9 +67,7 @@ const ToDoListPage = () => {
             onActionUpdate={handleListUpdate}
           />
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      ) : (<Preloader />)}
     </div>
   )
 }
